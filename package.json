@@ -1,0 +1,58 @@
+{
+  "name": "@akeyless-community/fly-runtime",
+  "version": "0.1.0",
+  "description": "Fetch Akeyless secrets at runtime on Fly.io Machines (Node.js) — no secret sync required",
+  "license": "Apache-2.0",
+  "author": "Akeyless Community",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akeyless-community/fly-runtime.git"
+  },
+  "homepage": "https://github.com/akeyless-community/fly-runtime#readme",
+  "keywords": [
+    "akeyless",
+    "fly",
+    "fly.io",
+    "secrets",
+    "runtime",
+    "environment-variables",
+    "paas"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "prepublishOnly": "npm run build && npm test",
+    "example:install": "npm run build && cd examples/express && npm install",
+    "example:start": "npm run example:install && cd examples/express && npm start"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "akeyless": "^5.0.25",
+    "akeyless-cloud-id": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.17.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
+  }
+}

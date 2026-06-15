@@ -1,0 +1,11 @@
+{
+  "name": "fly-runtime-example",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@akeyless-community/fly-runtime": "file:../..",
+    "express": "^4.21.2"
+  }
+}
